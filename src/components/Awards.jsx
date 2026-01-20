@@ -24,6 +24,12 @@ const Awards = () => {
                         <div className="award-image certificate-full">
                             <img src="/internation.jpg" alt="International Recognition Certificate" loading="lazy" />
                         </div>
+                        <div className="award-content">
+                            <h3 className="award-title">International Recognition</h3>
+                            <p className="award-description">Certificate of Excellence in Visual Storytelling</p>
+                            <p className="award-org">MOODINDIGO • IIT Bombay</p>
+                            <p className="award-location">Asia's Largest College Cultural Festival</p>
+                        </div>
                     </div>
                 </div>
             </div>
