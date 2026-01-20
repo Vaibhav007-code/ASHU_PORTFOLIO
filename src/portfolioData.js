@@ -14,6 +14,13 @@ const getImageData = (baseName) => ({
 
 export const portfolioData = [
     {
+        id: 3,
+        title: "Runway Fashion Show",
+        category: "fashion",
+        description: "High-fashion runway photography featuring model in ethereal white ensemble with dramatic lighting",
+        ...getImageData('IMG_6446')
+    },
+    {
         id: 1,
         title: "Bridal Fashion Photography",
         category: "fashion",
@@ -26,13 +33,6 @@ export const portfolioData = [
         category: "concert",
         description: "Artistic concert photography capturing dramatic golden stage lighting and performer silhouette",
         ...getImageData('IMG_6439')
-    },
-    {
-        id: 3,
-        title: "Runway Fashion Show",
-        category: "fashion",
-        description: "High-fashion runway photography featuring model in ethereal white ensemble with dramatic lighting",
-        ...getImageData('IMG_6446')
     },
     {
         id: 4,
