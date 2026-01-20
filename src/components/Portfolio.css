@@ -1,0 +1,461 @@
+.portfolio {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    /* Performance: Layout containment */
+    contain: layout style;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid rgba(201, 165, 90, 0.1);
+    border-radius: 50px;
+    /* Optimized transition - only transform and opacity */
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    /* GPU acceleration */
+    transform: translateZ(0);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gradient-gold);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px) translateZ(0);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    /* Performance: Content containment */
+    contain: layout style;
+}
+
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0);
+    /* Optimized transition - compositor only properties */
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* GPU acceleration */
+    will-change: opacity, transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Performance: Strict containment */
+    contain: layout style paint;
+    /* CRITICAL: Cache rendered content to prevent re-render on scroll */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
+
+.portfolio-item.visible {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+    /* Remove will-change after animation to free memory */
+    will-change: auto;
+}
+
+.portfolio-image {
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--color-surface);
+    /* GPU acceleration for image container */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* GPU-accelerated scaling */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* GPU acceleration */
+    transform: translateZ(0);
+}
+
+/* Image loading states */
+.portfolio-image img {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-image img.loaded {
+    opacity: 1;
+}
+
+/* Mobile-friendly: Info always visible */
+.portfolio-info {
+    background: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(201, 165, 90, 0.1);
+    border-top: none;
+    /* GPU acceleration */
+    transform: translateZ(0);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-location {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-primary);
+    background: rgba(201, 165, 90, 0.1);
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+/* Desktop hover effects - GPU accelerated */
+@media (hover: hover) {
+    .portfolio-item:hover .portfolio-image img.loaded {
+        transform: scale(1.08) translateZ(0);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+    }
+
+    .portfolio-item:hover .portfolio-info {
+        border-color: var(--color-primary);
+        background: var(--color-surface-light);
+    }
+}
+
+/* Mobile optimizations - Compact 2-column grid */
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 4rem 0;
+    }
+
+    .portfolio .container {
+        padding: 0 0.75rem;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Cache rendered items to prevent re-render lag */
+    .portfolio-item {
+        content-visibility: auto;
+        contain-intrinsic-size: 0 280px;
+        transition-duration: 0.3s;
+        width: 100%;
+    }
+
+    .portfolio-image {
+        aspect-ratio: 3/4;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .portfolio-info {
+        padding: 0.75rem;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .portfolio-info h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+        /* Truncate long titles */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .portfolio-description {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        /* Limit to 2 lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .portfolio-location {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .portfolio-category {
+        font-size: 0.6rem;
+        padding: 0.25rem 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .portfolio-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Small mobile - even more compact */
+@media (max-width: 480px) {
+    .portfolio {
+        padding: 3rem 0;
+    }
+
+    .portfolio-grid {
+        gap: 0.5rem;
+    }
+
+    .portfolio-image {
+        aspect-ratio: 1/1;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .portfolio-info {
+        padding: 0.5rem;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .portfolio-info h3 {
+        font-size: 0.75rem;
+    }
+
+    .portfolio-description {
+        display: none;
+        /* Hide description on very small screens */
+    }
+
+    .portfolio-location {
+        display: none;
+    }
+}
+
+/* Mobile Category Cards */
+.mobile-category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.category-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:active {
+    transform: scale(0.98);
+}
+
+.category-card-image {
+    position: relative;
+    aspect-ratio: 4/5;
+}
+
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.95) 50%);
+    color: white;
+    text-align: center;
+}
+
+.category-emoji {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-title {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.category-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.category-count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Mobile Album View */
+.mobile-album-view {
+    padding: 0 1rem;
+}
+
+.album-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid rgba(201, 165, 90, 0.2);
+    border-radius: 50px;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.back-button:hover {
+    background: var(--gradient-gold);
+    color: var(--color-secondary);
+    transform: translateX(-3px);
+}
+
+.album-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.album-emoji {
+    font-size: 2rem;
+}
+
+.album-title h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.album-count {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.album-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background: var(--color-surface);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 165, 90, 0.1);
+}
+
+.album-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.album-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+}
+
+.album-info {
+    padding: 1.25rem;
+}
+
+.album-info h4 {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.album-info p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.album-location {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 500;
+}

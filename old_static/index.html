@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Kumar - Cinematographer & Photographer</title>
+    <meta name="description" content="Award-winning cinematographer and photographer specializing in fashion, events, and commercial photography. Based at Lovely Professional University.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">ASHUTOSH KUMAR</span>
+                <span class="logo-subtitle">Cinematographer & Photographer</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#awards" class="nav-link">Awards</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Capturing</span>
+                    <span class="title-line highlight">Moments</span>
+                    <span class="title-line">That Matter</span>
+                </h1>
+                <p class="hero-subtitle">Award-winning cinematographer and photographer crafting visual stories that resonate</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-text">
+                        I'm a passionate cinematographer and photographer based at <strong>Lovely Professional University</strong>, 
+                        specializing in capturing the essence of fashion, concerts, events, and commercial content. 
+                        My work has been featured across major events including fashion weeks, music concerts, and high-profile collaborations.
+                    </p>
+                    <p class="about-text">
+                        With a keen eye for detail and a commitment to visual storytelling, I've had the privilege of working 
+                        with renowned artists, influencers, and brands. My approach combines technical expertise with creative 
+                        vision to deliver stunning visuals that leave a lasting impact.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label">National Award</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="assets/IMG_6472.PNG" alt="Ashutosh Kumar - Montrose Photography Partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📸</div>
+                    <h3 class="service-title">Fashion Photography</h3>
+                    <p class="service-description">
+                        Professional fashion shoots for runways, editorials, and commercial campaigns. 
+                        Expertise in capturing the perfect shot with attention to lighting and composition.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3 class="service-title">Cinematography</h3>
+                    <p class="service-description">
+                        High-quality video production for concerts, events, advertisements, and music videos. 
+                        Bringing stories to life through dynamic visual narratives.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎭</div>
+                    <h3 class="service-title">Event Coverage</h3>
+                    <p class="service-description">
+                        Comprehensive coverage of concerts, fashion shows, college events, and celebrity appearances. 
+                        Capturing every important moment with precision.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">Commercial Work</h3>
+                    <p class="service-description">
+                        Advertisement shoots, product photography, and promotional content for brands. 
+                        Creating compelling visuals that drive engagement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fashion">Fashion</button>
+                <button class="filter-btn" data-filter="concert">Concerts</button>
+                <button class="filter-btn" data-filter="event">Events</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="fashion">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6426.JPG" alt="Montrose Runway Fashion Week">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Montrose Runway Fashion Week</h3>
+                                <p>Jalandhar • Fashion Photography</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="concert">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6439.JPG" alt="Satinder Sartaaj India Tour">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Satinder Sartaaj India Tour</h3>
+                                <p>Concert Photography & Videography</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="fashion">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6446.JPG" alt="Chandigarh Fashion Times 2025">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Chandigarh Fashion Times 2025</h3>
+                                <p>Fashion Event Coverage</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="event">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6448.JPG" alt="Former PM of UK Event">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Former PM of UK 🇬🇧 Event</h3>
+                                <p>High-Profile Event Coverage</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item" data-category="event">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6449.JPG" alt="Creative Portrait">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Creative Portrait Photography</h3>
+                                <p>Artistic Expression</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item" data-category="concert">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6453.JPG" alt="Mukul Sharma Concert">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Mukul Sharma Concert</h3>
+                                <p>Live Concert Photography</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 7 -->
+                <div class="portfolio-item" data-category="fashion">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6458.JPG" alt="LPU Fashion Show 2025">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>LPU Fashion Show 2025</h3>
+                                <p>Lovely Professional University</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 8 -->
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6462.JPG" alt="Divita Juneja - Heer Ranjha Promotion">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Divita Juneja</h3>
+                                <p>Heer Ranjha Movie Promotion Shoot</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 9 -->
+                <div class="portfolio-item" data-category="concert">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6465.JPG" alt="DJ Anshika Concert">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>DJ Anshika Concert</h3>
+                                <p>Jalandhar • Live Performance</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 10 -->
+                <div class="portfolio-item" data-category="event">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6467.JPG" alt="Neeraj Goyat College Event">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Neeraj Goyat</h3>
+                                <p>Indian Professional Boxer & Influencer at College Event</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 11 -->
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6470.JPG" alt="Makeup Shoot">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Freelance Makeup Shoot</h3>
+                                <p>Commercial Photography</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 12 -->
+                <div class="portfolio-item" data-category="event">
+                    <div class="portfolio-image">
+                        <img src="assets/IMG_6471.JPG" alt="Mood Indigo IIT Bombay">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Mood Indigo</h3>
+                                <p>IIT Bombay • Asia's Largest College Festival</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Recognition</span>
+                <h2 class="section-title">Awards & Achievements</h2>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="assets/IMG_6473.PNG" alt="National Ranking Award">
+                    </div>
+                    <div class="award-content">
+                        <h3 class="award-title">National Ranking Award</h3>
+                        <p class="award-description">Best Social Media Promotion in Sports and Physical Education</p>
+                        <p class="award-org">G-SEC 2026 • Global Sports Educational Convention 2026</p>
+                        <p class="award-location">Lovely Professional University, Punjab</p>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="award-content">
+                        <h3 class="award-title">Official Cinematographer</h3>
+                        <p class="award-description">Main page Instagram feature - Lovely Professional University</p>
+                        <p class="award-org">Kalaakar Studio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Let's Work Together</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-heading">Ready to create something amazing?</h3>
+                    <p class="contact-text">
+                        Whether you need photography for a fashion show, cinematography for a concert, 
+                        or commercial content for your brand, I'm here to bring your vision to life.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <a href="mailto:contact@kalaakarstudio.com" class="contact-value">contact@kalaakarstudio.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <div class="contact-label">Phone</div>
+                                <a href="tel:+918287490360" class="contact-value">+91 82874 90360</a>
+                                <span class="contact-divider">•</span>
+                                <a href="tel:+919310140687" class="contact-value">+91 93101 40687</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div class="contact-label">Location</div>
+                                <div class="contact-value">Lovely Professional University, Jalandhar, Punjab</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/kalaakar_studio0" target="_blank" rel="noopener" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ashutosh-kumar-39252128a" target="_blank" rel="noopener" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ASHUTOSH KUMAR</h3>
+                    <p>Cinematographer & Photographer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#awards">Awards</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ashutosh Kumar. All rights reserved. | Kalaakar Studio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
