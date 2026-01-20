@@ -11,7 +11,7 @@ const Awards = () => {
                 <div className="awards-grid">
                     <div className="award-card">
                         <div className="award-image">
-                            <img src="assets/IMG_6473.PNG" alt="National Ranking Award" loading="lazy" />
+                            <img src="/IMG_6473.PNG" alt="National Ranking Award" loading="lazy" />
                         </div>
                         <div className="award-content">
                             <h3 className="award-title">National Award</h3>

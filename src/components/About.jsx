@@ -86,7 +86,7 @@ const About = () => {
                     </div>
                     <div className="about-image">
                         <div className="image-wrapper">
-                            <img src="assets/ashuimg.JPG" alt="Ashutosh Kumar - Cinematographer & Photographer" loading="lazy" />
+                            <img src="/ashuimg.JPG" alt="Ashutosh Verma - Cinematographer & Photographer" loading="lazy" />
                         </div>
                     </div>
                 </div>
