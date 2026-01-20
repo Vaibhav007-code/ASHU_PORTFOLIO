@@ -113,4 +113,31 @@
     .awards-grid {
         grid-template-columns: 1fr;
     }
+
+    .award-image {
+        aspect-ratio: auto;
+        min-height: 400px;
+        height: auto;
+    }
+
+    .award-image.certificate-full {
+        min-height: 500px;
+    }
+
+    .award-image.certificate-full img {
+        padding: 0.5rem;
+        max-height: none;
+    }
+
+    .award-content {
+        padding: 1.5rem;
+    }
+
+    .award-title {
+        font-size: 1.5rem;
+    }
+
+    .award-description {
+        font-size: 1rem;
+    }
 }
